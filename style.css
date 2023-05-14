@@ -1,0 +1,108 @@
+.Nav{
+    width: 100vw;
+    height: 10vh;
+    background-color: #85dcb0;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.k{
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: row-reverse; */
+    align-items: center;
+    height: 10vh;
+    /* width: 60vw */
+}
+.h{
+    /* margin-top: 3vh; */
+    margin-right: 10vw;
+    /* margin-left: 5vw; */
+    /* width: -10vw; */
+    text-decoration: wavy;
+    color:#FFF5EE;
+    font-size: 1.25rem;
+    /* text-shadow: 2px 2px #000; */
+}
+.h:hover{
+    text-transform: uppercase;
+    background-image: linear-gradient(
+      -225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-emphasis-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 1.25rem;
+}
+@keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+@media only screen and (max-width: 700px) {
+    .k {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .k.active {
+        left: 0;
+    }
+
+    .h {
+        margin: 1rem 0;
+        color: #101010;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
